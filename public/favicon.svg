@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Game Rating App">
+  <defs>
+    <linearGradient id="g" x1="10" y1="8" x2="54" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#a020f0" />
+      <stop offset="1" stop-color="#c084fc" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <circle cx="32" cy="32" r="30" fill="#18181b" />
+  <circle cx="32" cy="32" r="28" fill="none" stroke="url(#g)" stroke-width="3" />
+
+  <!-- Controller body -->
+  <path
+    d="M18 34c-2.9 0-5.5 2.2-6 5.2l-.4 2.2C11 45.3 13.7 48 17 48h4.4c2 0 3.8-1 4.9-2.6l1-1.5c.8-1.2 2.1-1.9 3.5-1.9h2.4c1.4 0 2.7.7 3.5 1.9l1 1.5c1.1 1.6 2.9 2.6 4.9 2.6H47c3.3 0 6-2.7 5.4-6.6l-.4-2.2c-.5-3-3.1-5.2-6-5.2h-1.8c-1.8 0-3.5.8-4.6 2.2l-.4.5c-.9 1.2-2.3 1.9-3.8 1.9H29.6c-1.5 0-2.9-.7-3.8-1.9l-.4-.5c-1.1-1.4-2.8-2.2-4.6-2.2H18z"
+    fill="#23232a"
+    stroke="url(#g)"
+    stroke-width="2"
+    stroke-linejoin="round"
+  />
+
+  <!-- D-pad -->
+  <rect x="20.5" y="35.5" width="10" height="3" rx="1.5" fill="#f4f4f5" opacity="0.9" />
+  <rect x="24" y="32" width="3" height="10" rx="1.5" fill="#f4f4f5" opacity="0.9" />
+
+  <!-- Buttons -->
+  <circle cx="44.5" cy="34.5" r="2.3" fill="#a020f0" />
+  <circle cx="48.3" cy="38.3" r="2.3" fill="#c084fc" />
+
+  <!-- Star (rating) -->
+  <path
+    d="M32 13.5l2.2 6.6h6.9l-5.6 4.1 2.2 6.6-5.7-4.1-5.7 4.1 2.2-6.6-5.6-4.1h6.9L32 13.5z"
+    fill="url(#g)"
+  />
+</svg>

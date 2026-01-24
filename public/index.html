@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Rating App</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 class="main-title">
+        <a id="home-link" class="main-title-link" href="#" aria-label="Go to home">GAMERATING</a>
+      </h1>
+      <div class="tabs">
+        <button id="tab-search" class="tab active">Search games</button>
+        <button id="tab-rated" class="tab">My ratings</button>
+      </div>
+    </header>
+    <main>
+      <section id="search-section">
+        <form id="search-form">
+          <input type="text" id="search-input" placeholder="Search for games..." required />
+          <button type="submit">Search</button>
+        </form>
+        <div id="search-results"></div>
+      </section>
+      <section id="rated-section" style="display:none;">
+        <div class="rated-controls">
+          <input type="text" id="rated-search" placeholder="Search in rated games..." />
+          <select id="filter-release">
+            <option value="">Release date</option>
+            <option value="asc">Oldest first</option>
+            <option value="desc">Newest first</option>
+          </select>
+          <select id="filter-rating">
+            <option value="">Newest rating</option>
+            <option value="high">Highest rating</option>
+            <option value="low">Lowest rating</option>
+          </select>
+        </div>
+        <ul id="games-list"></ul>
+      </section>
+    </main>
+    <footer class="site-footer" role="contentinfo" aria-label="Site footer">
+      <div class="footer-inner">
+        <span>© 2026 Vojtech Kania</span>
+        <span class="dot">•</span>
+        <span>Built with IGDB API</span>
+      </div>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
