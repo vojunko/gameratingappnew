@@ -11,14 +11,20 @@
 <body>
   <div class="container">
     <header>
-      <h1 class="main-title">
-        <a id="home-link" class="main-title-link" href="#" aria-label="Go to home">GAMERATING</a>
-      </h1>
-      <div class="tabs">
-        <button id="tab-search" class="tab active">Search games</button>
-        <button id="tab-rated" class="tab">My ratings</button>
-      </div>
-    </header>
+  <div class="header-top">
+    <h1 class="main-title">
+      <a id="home-link" class="main-title-link" href="#">GAMERATING</a>
+    </h1>
+
+    <div id="auth-bar" class="auth-bar"></div>
+  </div>
+
+  <div class="tabs">
+    <button id="tab-search" class="tab active">Search games</button>
+    <button id="tab-rated" class="tab">My ratings</button>
+  </div>
+</header>
+
     <main>
       <section id="search-section">
         <form id="search-form">
@@ -52,6 +58,6 @@
       </div>
     </footer>
   </div>
-  <script src="app.js"></script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>
