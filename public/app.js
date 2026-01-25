@@ -195,8 +195,7 @@ async function renderPlayedGames() {
           <div class="title-left">
             <div class="title-main">
               <strong>${game.name}</strong>
-              ${typeof game.critic === 'number' ? `<span class="critic-badge critic-inline" style="display:none;">${game.critic}%</span>` : ''}
-              ${typeof game.critic === 'number' ? `<button class="expand-btn" aria-expanded="false">▾</button>` : ''}
+              
             </div>
             ${game.year ? `<span class="year-under">${game.year}</span>` : ''}
           </div>
@@ -265,8 +264,7 @@ async function searchGames(query) {
             <div class="title-left">
               <div class="title-main">
                 <strong>${game.name}</strong>
-                ${typeof game.critic === 'number' ? `<span class="critic-badge critic-inline" style="display:none;">${game.critic}%</span>` : ''}
-                ${typeof game.critic === 'number' ? `<button class="expand-btn" aria-expanded="false">▾</button>` : ''}
+                
               </div>
               ${game.year ? `<span class="year-under">${game.year}</span>` : ''}
             </div>
@@ -380,3 +378,4 @@ await getCurrentUser();
 await renderAuthBar();
 await loadPlayedGamesFromDB();
 renderPlayedGames();
+
