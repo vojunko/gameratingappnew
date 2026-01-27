@@ -664,3 +664,18 @@ select::-ms-expand {
   transform: translateY(-1px);
 }
 
+.ratings-info {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #c9c9ce;
+}
+
+.ratings-info strong {
+  color: #f4f4f5;
+}
+
+.ratings-info .unrated {
+  color: #f59e0b; /* jemná oranžová pro upozornění */
+  margin-left: 0.4rem;
+}
