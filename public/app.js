@@ -164,6 +164,23 @@ function renderStars(rating, onClick) {
 /* ===================== RENDER PLAYED GAMES ===================== */
 
 async function renderPlayedGames() {
+  const infoDiv = document.getElementById("ratings-info");
+
+const totalCount = playedGames.length;
+const unratedCount = playedGames.filter(g => !g.rating || g.rating === 0).length;
+
+if (infoDiv) {
+  if (totalCount === 0) {
+    infoDiv.innerHTML = "No rated games yet.";
+  } else if (unratedCount > 0) {
+    infoDiv.innerHTML = `
+      <strong>${totalCount}</strong> games
+      <span class="unrated">(${unratedCount} not rated yet)</span>
+    `;
+  } else {
+    infoDiv.innerHTML = `<strong>${totalCount}</strong> games rated`;
+  }
+}
   let filtered = playedGames.slice();
 
   if (ratedSearchValue) {
@@ -378,4 +395,5 @@ await getCurrentUser();
 await renderAuthBar();
 await loadPlayedGamesFromDB();
 renderPlayedGames();
+
 
