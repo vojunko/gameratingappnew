@@ -682,4 +682,19 @@ select::-ms-expand {
   color: #f59e0b; /* jemná oranžová pro upozornění */
   margin-left: 0.4rem;
 }
+.platforms {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
 
+.platforms a {
+  font-size: 14px;
+  text-decoration: none;
+  transition: transform 0.15s, opacity 0.15s;
+}
+
+.platforms a:hover {
+  transform: scale(1.15);
+  opacity: 0.8;
+}
