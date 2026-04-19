@@ -274,7 +274,7 @@ if (infoDiv) {
 /* ===================== SEARCH GAMES ===================== */
 
 async function searchGames(query) {
-  const links = getGameLinks(game);
+  
   searchResults.innerHTML = '<div>Searching...</div>';
 
   try {
@@ -285,6 +285,7 @@ async function searchGames(query) {
 
     data.forEach(game => {
       const div = document.createElement('div');
+      const links = getGameLinks(game);
       div.className = 'game-result';
 
       const alreadyRated = playedGames.some(g => g.id === game.id);
