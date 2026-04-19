@@ -16,6 +16,12 @@ let filterReleaseValue = '';
 let filterRatingValue = '';
 let lastSearchQuery = '';
 
+function getGameLinks(game) {
+  return {
+    metacritic: `https://www.metacritic.com/search/game/${encodeURIComponent(game.name)}/results`
+  };
+}
+
 /* ===================== AUTH ===================== */
 
 async function getCurrentUser() {
