@@ -239,7 +239,9 @@ if (infoDiv) {
           <div class="title-right">
 
   <div class="platforms">
-    <a href="${links.metacritic}" target="_blank" title="Metacritic">🟩</a>
+    <a href="${links.metacritic}" target="_blank" title="Metacritic" class="platform-icon">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Metacritic.svg" alt="Metacritic">
+</a>
   </div>
 
   <div class="rating"></div>
@@ -316,7 +318,9 @@ async function searchGames(query) {
             <div class="title-right">
 
   <div class="platforms">
-    <a href="${links.metacritic}" target="_blank" title="Metacritic">🟩</a>
+    <a href="${links.metacritic}" target="_blank" title="Metacritic" class="platform-icon">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Metacritic.svg" alt="Metacritic">
+</a>
   </div>
 
   <button ${alreadyRated ? 'disabled' : ''} class="add-btn">
