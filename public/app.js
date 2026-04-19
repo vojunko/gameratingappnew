@@ -170,7 +170,7 @@ function renderStars(rating, onClick) {
 /* ===================== RENDER PLAYED GAMES ===================== */
 
 async function renderPlayedGames() {
-  const links = getGameLinks(game);
+  
   const infoDiv = document.getElementById("ratings-info");
 
 const totalCount = playedGames.length;
@@ -212,6 +212,7 @@ if (infoDiv) {
 
   filtered.forEach((game) => {
     const li = document.createElement('li');
+    const links = getGameLinks(game);
     li.innerHTML = `
       <img src="${game.cover || ''}" alt="${game.name}" />
       <div class="content">
