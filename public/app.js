@@ -63,11 +63,11 @@ async function renderAuthBar() {
 
     document.getElementById("login-btn").onclick = async () => {
       await supabase.auth.signInWithOAuth({
-        provider: "discord",
-        options: {
-          redirectTo: window.location.origin
-        }
-      });
+  provider: "discord",
+  options: {
+    scopes: "identify guilds"
+  }
+});
     };
 
     return;
@@ -434,10 +434,30 @@ searchForm.onsubmit = (e) => {
   searchGames(lastSearchQuery);
 };
 
+async function loadUserGuilds() {
+  const { data: { session } } = await supabase.auth.getSession();
+
+  if (!session?.provider_token) {
+    console.log("No provider token");
+    return;
+  }
+
+  const res = await fetch("https://discord.com/api/users/@me/guilds", {
+    headers: {
+      Authorization: `Bearer ${session.provider_token}`
+    }
+  });
+
+  const guilds = await res.json();
+
+  console.log("Guilds:", guilds);
+}
+
 /* ===================== INIT ===================== */
 
 await getCurrentUser();
 await renderAuthBar();
 await loadPlayedGamesFromDB();
+await loadUserGuilds();
 renderPlayedGames();
 
