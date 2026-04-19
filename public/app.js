@@ -240,7 +240,7 @@ if (infoDiv) {
 
   <div class="platforms">
     <a href="${links.metacritic}" target="_blank" title="Metacritic" class="platform-icon">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Metacritic.svg" alt="Metacritic">
+  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/metacritic.svg" alt="Metacritic">
 </a>
   </div>
 
@@ -319,7 +319,7 @@ async function searchGames(query) {
 
   <div class="platforms">
     <a href="${links.metacritic}" target="_blank" title="Metacritic" class="platform-icon">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Metacritic.svg" alt="Metacritic">
+  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/metacritic.svg" alt="Metacritic">
 </a>
   </div>
 
