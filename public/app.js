@@ -18,6 +18,12 @@ let lastSearchQuery = '';
 
 /* ===================== AUTH ===================== */
 
+
+function getGameLinks(game) {
+  return {
+    metacritic: `https://www.metacritic.com/search/game/${encodeURIComponent(game.name)}/results`
+  };
+}
 async function getCurrentUser() {
   const {
     data: { session }
@@ -285,11 +291,7 @@ async function searchGames(query) {
               </div>
               ${game.year ? `<span class="year-under">${game.year}</span>` : ''}
             </div>
-            <div class="title-right">
-              <button ${alreadyRated ? 'disabled' : ''} class="add-btn">
-                ${alreadyRated ? '✔️ Added' : 'Add'}
-              </button>
-            </div>
+            const links = getGameLinks(game);
           </div>
         </div>
       `;
