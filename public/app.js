@@ -18,12 +18,6 @@ let lastSearchQuery = '';
 
 /* ===================== AUTH ===================== */
 
-
-function getGameLinks(game) {
-  return {
-    metacritic: `https://www.metacritic.com/search/game/${encodeURIComponent(game.name)}/results`
-  };
-}
 async function getCurrentUser() {
   const {
     data: { session }
@@ -170,6 +164,7 @@ function renderStars(rating, onClick) {
 /* ===================== RENDER PLAYED GAMES ===================== */
 
 async function renderPlayedGames() {
+  const links = getGameLinks(game);
   const infoDiv = document.getElementById("ratings-info");
 
 const totalCount = playedGames.length;
@@ -223,9 +218,15 @@ if (infoDiv) {
             ${game.year ? `<span class="year-under">${game.year}</span>` : ''}
           </div>
           <div class="title-right">
-            <div class="rating"></div>
-            <button class="remove-btn" title="Remove">&#10006;</button>
-          </div>
+
+  <div class="platforms">
+    <a href="${links.metacritic}" target="_blank" title="Metacritic">🟩</a>
+  </div>
+
+  <div class="rating"></div>
+  <button class="remove-btn" title="Remove">&#10006;</button>
+
+</div>
         </div>
       </div>
     `;
@@ -266,6 +267,7 @@ if (infoDiv) {
 /* ===================== SEARCH GAMES ===================== */
 
 async function searchGames(query) {
+  const links = getGameLinks(game);
   searchResults.innerHTML = '<div>Searching...</div>';
 
   try {
@@ -291,7 +293,18 @@ async function searchGames(query) {
               </div>
               ${game.year ? `<span class="year-under">${game.year}</span>` : ''}
             </div>
-            const links = getGameLinks(game);
+            <div class="title-right">
+
+  <div class="platforms">
+    <a href="${links.metacritic}" target="_blank" title="Metacritic">🟩</a>
+  </div>
+
+  <button ${alreadyRated ? 'disabled' : ''} class="add-btn">
+    ${alreadyRated ? '✔️ Added' : 'Add'}
+  </button>
+
+</div>
+            </div>
           </div>
         </div>
       `;
@@ -397,5 +410,4 @@ await getCurrentUser();
 await renderAuthBar();
 await loadPlayedGamesFromDB();
 renderPlayedGames();
-
 
