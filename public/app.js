@@ -437,10 +437,7 @@ searchForm.onsubmit = (e) => {
 async function loadUserGuilds() {
   const { data: { session } } = await supabase.auth.getSession();
 
-  if (!session?.provider_token) {
-    console.log("No provider token");
-    return;
-  }
+  if (!session?.provider_token || !currentUser) return;
 
   const res = await fetch("https://discord.com/api/users/@me/guilds", {
     headers: {
@@ -451,6 +448,25 @@ async function loadUserGuilds() {
   const guilds = await res.json();
 
   console.log("Guilds:", guilds);
+
+  // 🔥 uložíme do DB
+  const rows = guilds.map(g => ({
+    user_id: currentUser.id,
+    guild_id: g.id,
+    name: g.name,
+    icon: g.icon
+  }));
+
+  // smažeme staré
+  await supabase
+    .from("user_guilds")
+    .delete()
+    .eq("user_id", currentUser.id);
+
+  // vložíme nové
+  await supabase
+    .from("user_guilds")
+    .insert(rows);
 }
 
 /* ===================== INIT ===================== */
