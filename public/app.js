@@ -17,11 +17,23 @@ let filterRatingValue = '';
 let lastSearchQuery = '';
 
 function getGameLinks(game) {
+  const slug = slugify(game.name);
+
   return {
-    metacritic: `https://www.metacritic.com/search/${encodeURIComponent(game.name)}/`
+    metacritic: `https://www.metacritic.com/game/${slug}/`
   };
 }
 
+
+function slugify(name) {
+  return name
+    .toLowerCase()
+    .normalize("NFD") // odstraní diakritiku
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9\s-]/g, "") // odstraní speciální znaky
+    .replace(/\s+/g, "-") // mezery → pomlčky
+    .replace(/-+/g, "-"); // víc pomlček → jedna
+}
 /* ===================== AUTH ===================== */
 
 async function getCurrentUser() {
