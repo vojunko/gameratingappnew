@@ -18,7 +18,7 @@ let lastSearchQuery = '';
 
 function getGameLinks(game) {
   return {
-    metacritic: `https://www.metacritic.com/search/game/${encodeURIComponent(game.name)}/results`
+    metacritic: `https://www.metacritic.com/search/${encodeURIComponent(game.name)}/`
   };
 }
 
