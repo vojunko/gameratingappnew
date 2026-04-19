@@ -698,3 +698,14 @@ select::-ms-expand {
   transform: scale(1.15);
   opacity: 0.8;
 }
+.platform-icon img {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1); /* bílé logo do dark módu */
+  transition: transform 0.15s, opacity 0.15s;
+}
+
+.platform-icon:hover img {
+  transform: scale(1.15);
+  opacity: 0.8;
+}
