@@ -3,7 +3,7 @@
 
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
-const supabaseUrl = "https://discord.com/oauth2/authorize?client_id=1464911744735514644&response_type=code&redirect_uri=https%3A%2F%2Fuwukjitggyegxkddqisi.supabase.co%2Fauth%2Fv1%2Fcallback&scope=guilds+identify";
+const supabaseUrl = "https://cixhjhwhgxynvvkmoovu.supabase.co/auth/v1/callback;
 const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV3dWtqaXRnZ3llZ3hrZGRxaXNpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkzMjQ2OTAsImV4cCI6MjA4NDkwMDY5MH0.GY3zjvmkEHyCZx-H0x-wQ0kNiWwk9pKbfulxwc-z1P4"; // nech, co tam máš
 const supabase = createClient(supabaseUrl, supabaseKey);
 
