@@ -710,3 +710,24 @@ select::-ms-expand {
   transform: scale(1.15);
   opacity: 1;
 }
+.platform-icon {
+  display: flex;
+  align-items: center;
+}
+
+.meta-icon {
+  width: 16px;
+  height: 16px;
+  fill: #f5c518; /* žlutá jako Metacritic */
+  color: #000;
+  transition: transform 0.15s, opacity 0.15s;
+}
+
+.meta-icon text {
+  fill: #000;
+}
+
+.platform-icon:hover .meta-icon {
+  transform: scale(1.15);
+  opacity: 0.9;
+}
